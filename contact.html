@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<style>
+      /* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page{
+    padding:140px 8%;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* LEFT */
+
+.contact-left{
+    position:relative;
+    z-index:2;
+}
+
+.contact-tag{
+    color:#00F5FF;
+
+    letter-spacing:4px;
+
+    font-size:0.9rem;
+
+    text-transform:uppercase;
+
+    display:block;
+
+    margin-bottom:25px;
+}
+
+.contact-left h2{
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+    font-family:'Orbitron',sans-serif;
+}
+
+.contact-left h2 span{
+    color:#00F5FF;
+}
+
+.contact-left p{
+    color:#9ca3af;
+
+    line-height:1.9;
+
+    max-width:550px;
+
+    margin-bottom:45px;
+}
+
+/* INFO GRID */
+
+.contact-info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+/* CARD */
+
+.contact-info-card{
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s ease;
+}
+
+.contact-info-card:hover{
+    transform:translateY(-8px);
+
+    border-color:
+    rgba(0,245,255,0.25);
+
+    box-shadow:
+    0 10px 30px rgba(0,245,255,0.08);
+}
+
+.contact-info-card i{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,245,255,0.15),
+    rgba(139,92,246,0.15)
+    );
+
+    color:#00F5FF;
+
+    font-size:1.4rem;
+}
+
+.contact-info-card h3{
+    margin-bottom:5px;
+    font-size:1rem;
+}
+
+.contact-info-card p{
+    margin:0;
+    color:#9ca3af;
+    font-size:0.92rem;
+}
+
+/* RIGHT */
+
+.contact-right{
+    position:relative;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+}
+
+/* RGB BORDER */
+
+.contact-right::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    border-radius:35px;
+    padding:1px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,245,255,0.5),
+    rgba(139,92,246,0.4),
+    rgba(255,0,60,0.25)
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+}
+
+/* FORM */
+
+#contactForm{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.input-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea{
+    width:100%;
+
+    padding:18px 22px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:#0f172a;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-size:0.95rem;
+
+    transition:0.3s ease;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder{
+    color:#9ca3af;
+}
+
+.input-box select option{
+    background:#0f172a;
+    color:white;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus{
+    border-color:#00F5FF;
+
+    box-shadow:
+    0 0 15px rgba(0,245,255,0.15);
+}
+
+textarea{
+    resize:none;
+}
+
+/* BUTTON */
+
+.contact-btn{
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00F5FF,
+    #8B5CF6
+    );
+
+    color:black;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.4s ease;
+}
+
+.contact-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* GLOW BG */
+
+.contact-page::before{
+    content:'';
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#00f7ff12;
+
+    filter:blur(140px);
+
+    top:-150px;
+    left:-150px;
+
+    z-index:-1;
+}
+
+.contact-page::after{
+    content:'';
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:#8b5cf611;
+
+    filter:blur(140px);
+
+    bottom:-150px;
+    right:-150px;
+
+    z-index:-1;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    .contact-page{
+        grid-template-columns:1fr;
+        padding:100px 5%;
+    }
+
+    .contact-left h2{
+        font-size:2.8rem;
+    }
+
+    .contact-info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .input-row{
+        grid-template-columns:1fr;
+    }
+
+}
+</style>-->
+</head>
+<body>
+    
+<!-- =========================
+     CONTACT PAGE SECTION
+========================= -->
+
+<section class="contact-page">
+
+    <!-- LEFT -->
+
+    <div class="contact-left">
+
+        <span class="contact-tag">
+            CONTACT NJ GAMING HUB
+        </span>
+
+        <h2>
+            Let’s Build Your <span>Gaming Experience</span>
+        </h2>
+
+        <p>
+            Want to book your setup, organize tournaments,
+            birthday parties or premium gaming sessions?
+            Contact us directly and reserve your spot instantly.
+        </p>
+
+        <!-- INFO BOXES -->
+
+        <div class="contact-info-grid">
+
+            <div class="contact-info-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+                    <h3>Location</h3>
+                    <p>Kalol, Gujarat</p>
+                </div>
+
+            </div>
+
+            <div class="contact-info-card">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 9426311122</p>
+                </div>
+
+            </div>
+
+            <div class="contact-info-card">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <div>
+                    <h3>WhatsApp</h3>
+                    <p>Instant Booking Support</p>
+                </div>
+
+            </div>
+
+            <div class="contact-info-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+                    <h3>Opening Hours</h3>
+                    <p>10 AM — 2 AM</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="contact-right">
+
+        <form id="contactForm">
+
+            <div class="input-row">
+
+                <div class="input-box">
+                    <input type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required>
+                </div>
+
+                <div class="input-box">
+                    <input type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required>
+                </div>
+
+            </div>
+
+            <div class="input-row">
+
+                <div class="input-box">
+
+                    <select id="service">
+
+                        <option>
+                            Select Service
+                        </option>
+
+                        <option>
+                            RTX Gaming PC
+                        </option>
+
+                        <option>
+                            PS5 Gaming
+                        </option>
+
+                        <option>
+                            Tournament Booking
+                        </option>
+
+                        <option>
+                            Birthday Party
+                        </option>
+
+                        <option>
+                            Racing Simulator
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-box">
+
+                    <input type="date"
+                    id="date">
+
+                </div>
+
+            </div>
+
+            <div class="input-box">
+
+                <textarea
+                id="message"
+                rows="6"
+                placeholder="Write Your Message"></textarea>
+
+            </div>
+
+            <button type="submit"
+            class="contact-btn">
+
+                Book On WhatsApp
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section></body>
+<script>
+
+document
+.getElementById("contactForm")
+
+.addEventListener("submit",
+
+function(e){
+
+    e.preventDefault();
+
+    let name =
+    document.getElementById("name").value;
+
+    let phone =
+    document.getElementById("phone").value;
+
+    let service =
+    document.getElementById("service").value;
+
+    let date =
+    document.getElementById("date").value;
+
+    let message =
+    document.getElementById("message").value;
+
+    let whatsappMessage =
+`🎮 NEW BOOKING REQUEST
+
+ Name: ${name}
+
+ Phone: ${phone}
+
+ Service: ${service}
+
+ Date: ${date}
+
+ Message:
+${message}`;
+
+    let phoneNumber =
+    "918000557772";
+
+    let whatsappURL =
+`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+</script>
+</html>

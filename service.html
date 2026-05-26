@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section{
+    padding:140px 8%;
+    position:relative;
+    overflow:hidden;
+}
+
+/* TOP */
+
+.services-top{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+    margin-bottom:80px;
+}
+
+.services-top span{
+    color:#00F5FF;
+    letter-spacing:4px;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:20px;
+}
+
+.services-top h2{
+    font-size:4rem;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:25px;
+    line-height:1.1;
+}
+
+.services-top h2 b{
+    color:#00F5FF;
+}
+
+.services-top p{
+    color:#9ca3af;
+    line-height:1.8;
+}
+
+/* GRID */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
+}
+
+/* CARD */
+
+.service-card{
+    position:relative;
+
+    padding:40px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    overflow:hidden;
+
+    transition:0.5s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-12px);
+
+    border-color:
+    rgba(0,245,255,0.25);
+
+    box-shadow:
+    0 15px 40px rgba(0,245,255,0.08);
+}
+
+/* RGB BORDER */
+
+.service-card::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    border-radius:32px;
+    padding:1px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,245,255,0.5),
+    rgba(139,92,246,0.35),
+    rgba(255,0,60,0.35)
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    opacity:0;
+
+    transition:0.4s ease;
+}
+
+.service-card:hover::before{
+    opacity:1;
+}
+
+/* ICON */
+
+.service-icon{
+    width:75px;
+    height:75px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,245,255,0.15),
+    rgba(139,92,246,0.15)
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+}
+
+.service-icon i{
+    font-size:2rem;
+    color:#00F5FF;
+}
+
+/* TITLE */
+
+.service-card h3{
+    font-size:1.8rem;
+    margin-bottom:30px;
+    font-family:'Orbitron',sans-serif;
+}
+
+/* LIST */
+
+.service-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.service-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 18px;
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,0.03);
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    transition:0.3s ease;
+}
+
+.service-item:hover{
+    transform:translateX(6px);
+
+    background:
+    rgba(0,245,255,0.05);
+}
+
+.service-item span{
+    color:#d1d5db;
+    font-size:0.95rem;
+}
+
+.service-item b{
+    color:#00F5FF;
+    font-size:0.95rem;
+}
+
+/* OFFERS */
+
+.offers-wrapper{
+    margin-top:90px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.offer-box{
+    padding:30px;
+
+    border-radius:28px;
+
+    background:
+    rgba(255,255,255,0.03);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
+
+    transition:0.4s ease;
+}
+
+.offer-box:hover{
+    transform:translateY(-8px);
+
+    border-color:
+    rgba(0,245,255,0.2);
+
+    box-shadow:
+    0 10px 30px rgba(0,245,255,0.06);
+}
+
+.offer-box h4{
+    font-size:1.2rem;
+    margin-bottom:14px;
+}
+
+.offer-box p{
+    color:#9ca3af;
+    line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .services-section{
+        padding:100px 5%;
+    }
+
+    .services-top h2{
+        font-size:2.8rem;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+     <img src="assets/img/logo.jpg" height="50px" weight="50px" margin-top="100px"></img> NJ<span>Gaming Hub</span>
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+      <a href="">About</a>
+      <a href="#">System</a>
+        <a href="#">Services</a>
+        
+      <a href="#">Kitchen</a>
+      <a href="#">Gallery</a>
+    
+
+
+           <a href="#">Contact</a>
+ 
+
+    <a href="#" class="nav-btn">
+      Book Now
+    </a>
+
+  </nav>
+    <!-- =========================
+     SERVICES SECTION
+========================= -->
+
+<section class="services-section">
+
+    <!-- TOP -->
+
+    <div class="services-top">
+
+        <span>
+            OUR SERVICES
+        </span>
+
+        <h2>
+            Complete <b>Gaming Solutions</b>
+        </h2>
+
+        <p>
+            Premium gaming experiences, tournaments,
+            memberships and esports services designed
+            for every type of gamer.
+        </p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="services-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+
+            <h3>Gaming Rentals</h3>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <span>PlayStation 5 Gaming</span>
+                    <b>₹80/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Xbox Series X</span>
+                    <b>₹70/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Premium RTX PCs</span>
+                    <b>₹100/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>VR Gaming</span>
+                    <b>₹120/hour</b>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <h3>Tournament Hosting</h3>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <span>Valorant Tournament</span>
+                    <b>₹75 Entry</b>
+                </div>
+
+                <div class="service-item">
+                    <span>FIFA Championship</span>
+                    <b>₹50 Entry</b>
+                </div>
+
+                <div class="service-item">
+                    <span>PUBG Mobile</span>
+                    <b>₹60 Entry</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Custom Tournaments</span>
+                    <b>Contact Us</b>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <h3>Party Packages</h3>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <span>Birthday Party</span>
+                    <b>₹2500</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Group Gaming</span>
+                    <b>₹350/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Corporate Gaming</span>
+                    <b>₹600/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Weekend Special</span>
+                    <b>₹180/hour</b>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>Membership Plans</h3>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <span>Silver Membership</span>
+                    <b>₹999</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Gold Membership</span>
+                    <b>₹1999</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Platinum Membership</span>
+                    <b>₹3999</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Priority Booking</span>
+                    <b>Included</b>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 5 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+
+            <h3>Technical Services</h3>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <span>Game Installation</span>
+                    <b>Free</b>
+                </div>
+
+                <div class="service-item">
+                    <span>PC Maintenance</span>
+                    <b>₹200</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Account Recovery</span>
+                    <b>₹50</b>
+                </div>
+
+                <div class="service-item">
+                    <span>24/7 Support</span>
+                    <b>Included</b>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 6 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <h3>Extra Services</h3>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <span>Gaming Coaching</span>
+                    <b>₹300/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Streaming Setup</span>
+                    <b>₹500</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Private Rooms</span>
+                    <b>₹200/hour</b>
+                </div>
+
+                <div class="service-item">
+                    <span>Equipment Rental</span>
+                    <b>₹50/hour</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- OFFERS -->
+
+    <div class="offers-wrapper">
+
+        <div class="offer-box">
+            <h4>🎓 Student Discount</h4>
+            <p>25% OFF on weekdays with student ID.</p>
+        </div>
+
+        <div class="offer-box">
+            <h4>⏰ Happy Hours</h4>
+            <p>30% OFF from 2 PM to 5 PM weekdays.</p>
+        </div>
+
+        <div class="offer-box">
+            <h4>👥 Group Booking</h4>
+            <p>Book 4+ setups and save 25% instantly.</p>
+        </div>
+
+        <div class="offer-box">
+            <h4>🌟 Weekend Special</h4>
+            <p>Unlimited gaming packages from ₹400.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</body>
+<script>
+    // SERVICES ANIMATION
+
+gsap.from(".service-card",{
+    y:80,
+    opacity:0,
+    duration:1.2,
+    stagger:0.15,
+    scrollTrigger:{
+        trigger:".services-section",
+        start:"top 75%"
+    }
+});
+
+gsap.from(".offer-box",{
+    y:60,
+    opacity:0,
+    duration:1,
+    stagger:0.2,
+    scrollTrigger:{
+        trigger:".offers-wrapper",
+        start:"top 80%"
+    }
+});
+</script>
+</html>
